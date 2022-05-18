@@ -1,0 +1,35 @@
+{% extends "inventory/base.html" %}
+{% block content%}
+    <div class="content-section">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col"> Warehouse</th>
+                <th scope="col">Quantity in Stock</th>
+                <th scope="col">Quantity Sold</th>
+                <th scope="col">Cost per item</th>
+                <th scope="col">Sales</th>
+                <th scope="col">Stock Date</th>
+                <th scope="col">Last sale Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for inventory in inventorys%}
+                <tr onclick="window.location = `{% url 'inventory-detail' inventory.id %}`">
+                    <th scope="row">{{forloop.counter}}</th>
+                    <th scope="row">{{inventory.name}}</th>
+                    <th scope="row">{{inventory.warehouse}}</th>
+                    <th scope="row">{{inventory.Quantity_in_stock}}</th>
+                    <th scope="row">{{inventory.Quantity_sold}}</th>
+                    <th scope="row">{{inventory.cost_per_item}}</th>
+                    <th scope="row">{{inventory.sales}}</th>
+                    <th scope="row">{{inventory.stock_date}}</th>
+                    <th scope="row">{{inventory.last_sales_date}}</th>
+                </tr>
+              {% endfor%}
+            </tbody>
+          </table>
+    </div>
+{% endblock %}

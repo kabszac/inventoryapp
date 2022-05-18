@@ -1,0 +1,90 @@
+{% extends "inventory/base.html"%}
+{% block content %}
+    <div class="content-section">
+        <div class="row mix-auto justify-content-center">
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">Product Name</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fab fa-product-hunt" aria-hidden="true"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.name}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">Warehouse</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-warehouse"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.warehouse}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">Quantity_in_stock</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-boxes"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.Quantity_in_stock}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">Quantity_sold</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-boxes"></i></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.Quantity_sold}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">cost_per_{{inventory.name}}</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-dollar-sign"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.cost_per_item}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">Sales</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-dollar-sign"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.sales}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">stock_date</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.stock_date}}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title text-centre">last_sales_date</h5>
+                    <div class="text-centre" style="font-size: 30px;">
+                        <span><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <h3 class="text-centre"> {{inventory.last_sales_date}}</h3>
+                </div>
+            </div>
+
+            <a class="btn btn-outline-success btn-sm" href="{% url 'inventory-update' inventory.id %}"> Update</a>
+            <a class="btn btn-danger btn-sm mt-2" href="{% url 'inventory-delete' inventory.id %}"> Delete</a>
+        </div>
+    </div>
+{% endblock%}
